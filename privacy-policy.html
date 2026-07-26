@@ -395,7 +395,7 @@
     <div class="hero-inner">
       <p class="hero-eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: June 16, 2026 &nbsp;·&nbsp; Last updated: June 16, 2026</p>
+      <p class="effective-date">Effective date: June 16, 2026 &nbsp;·&nbsp; Last updated: July 25, 2026</p>
     </div>
   </div>
 
@@ -418,13 +418,19 @@
       <p>We collect only what is necessary to provide the app's functionality:</p>
       <ul>
         <li><strong>Account information</strong> — your name, email address, username, and a securely hashed version of your password. We never store your password in plain text.</li>
+        <li><strong>Account information</strong> — your name, email address, username, and a securely hashed version of your password. We never store your password in plain text.</li>
         <li><strong>Health and cycle data</strong> — period logs, cycle predictions, symptoms, and related tracking entries you create.</li>
-        <li><strong>Fitness data</strong> — workout sessions, exercise types, sets, reps, and activity logs.</li>
+        <li><strong>Mental health data</strong> — PHQ-2 check-in responses, mood diary entries (including intensity ratings and trigger tags), journal entries, and weekly reflections you record.</li>
+        <li><strong>Fitness data</strong> — workout sessions, exercise types, sets, reps, activity logs, and workouts written to Apple Health with your permission.</li>
         <li><strong>Nutrition data</strong> — food entries, meal logs, and nutrition information you record.</li>
+        <li><strong>Supplement and medication data</strong> — supplement names, dosages, reminder times, and taken/untaken status; medication names, dosages, and reminder schedules.</li>
+        <li><strong>Birth control data</strong> — pill name and reminder preferences, if you choose to enable this feature.</li>
         <li><strong>Body metrics</strong> — weight and related measurements you choose to log.</li>
         <li><strong>Hydration data</strong> — water intake logs.</li>
+        <li><strong>Apple Health data</strong> — steps, sleep hours and stages, heart rate, HRV, and active calories, read from Apple Health only with your explicit permission. We do not store raw HealthKit data on our servers; it is processed on your device to generate insights.</li>
+        <li><strong>Diary media</strong> — photos and videos you attach to journal entries, stored securely in AWS S3.</li>
         <li><strong>Profile information</strong> — your avatar color, bio, birthday, and profile photo if you choose to upload one.</li>
-        <li><strong>Notification preferences</strong> — your settings for reminders such as water and medication alerts.</li>
+        <li><strong>Notification preferences</strong> — your settings for reminders such as water, supplement, medication, and cycle alerts.</li>
       </ul>
       <div class="highlight-card green">
         <p><strong>That's it.</strong> We do not collect analytics, usage telemetry, advertising identifiers, location data, or any data beyond what you explicitly enter into the app.</p>
@@ -439,6 +445,7 @@
         <li>Authenticate your account securely.</li>
         <li>Send transactional emails — account verification, password reset, and notification reminders you have enabled.</li>
         <li>Sync your data across sessions and devices.</li>
+        <li>Generate wellness insights by correlating health metrics (such as sleep, steps, and HRV) with mood and check-in data. All correlation processing occurs on our servers using only data you have provided; no insights are shared with third parties.</li>
       </ul>
       <div class="highlight-card blush">
         <p>We do <strong>not</strong> use your data for advertising, profiling, or any purpose beyond operating Olive for your benefit.</p>
@@ -451,7 +458,9 @@
       <p>We share data only with the following service providers who process it on our behalf, under strict data processing terms:</p>
       <ul>
         <li><strong>Amazon Web Services (AWS)</strong> — cloud infrastructure and database hosting. Your data is stored on AWS servers in the United States.</li>
+        <li><strong>Amazon S3 (AWS)</strong> — secure cloud storage for diary photos and videos you attach to journal entries. Media is stored in a private bucket with server-side encryption and accessed only via short-lived pre-signed URLs.</li>
         <li><strong>Amazon Simple Email Service (SES)</strong> — transactional email delivery for verification emails, password resets, and reminders.</li>
+        <li><strong>Apple HealthKit</strong> — Olive reads health data (steps, sleep, heart rate, HRV, active calories) and writes workout data to Apple Health only with your explicit permission. Data exchanged with HealthKit is governed by Apple's privacy policy and your device settings. We do not transmit raw HealthKit data to our servers.</li>
       </ul>
       <p>We may disclose information if required by law, court order, or to protect the safety of our users or the public.</p>
     </section>
@@ -463,6 +472,7 @@
         <li>HTTPS encryption for all data in transit between your device and our servers.</li>
         <li>bcrypt hashing for all stored passwords.</li>
         <li>Network-level security controls limiting database access to our application servers only.</li>
+        <li>Server-side encryption for diary photos and videos stored in AWS S3, accessed via short-lived pre-signed URLs that expire automatically.</li>
       </ul>
       <div class="highlight-card sky">
         <p>No method of transmission or storage is 100% secure. We take reasonable and industry-standard precautions to protect your information, but we cannot guarantee absolute security.</p>
